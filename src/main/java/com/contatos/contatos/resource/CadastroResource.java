@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,7 @@ import com.contatos.contatos.repository.CadastroRepository;
 
 @RestController
 @RequestMapping("/cadastro")
+@CrossOrigin(origins = "*")
 public class CadastroResource {
 
 	@Autowired
@@ -39,8 +41,8 @@ public class CadastroResource {
 	}
 
 	@PostMapping
-	public void criar(@RequestBody Cadastro cadastro) {
-		cadastroRepository.save(cadastro);
+	public Cadastro criar(@RequestBody Cadastro cadastro) {
+		return cadastroRepository.save(cadastro);
 	}
 
 	@DeleteMapping("/{id}")
