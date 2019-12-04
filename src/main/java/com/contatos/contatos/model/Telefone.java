@@ -22,11 +22,21 @@ public class Telefone {
 	private Long id;
 
 	private Long telefone;
+	
+	private String contatoNome;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "cadastro_id", referencedColumnName = "id")
 	@JsonBackReference
 	private Cadastro cadastro;
+
+	public String getContatoNome() {
+		return contatoNome;
+	}
+
+	public void setContatoNome(String contatoNome) {
+		this.contatoNome = contatoNome;
+	}
 
 	public Cadastro getCadastro() {
 		return cadastro;
