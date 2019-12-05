@@ -31,7 +31,7 @@ public class Cadastro {
 
 	private Long numero;
 
-	private Long complemento;
+	private String complemento;
 	
 	private String bairro;
 	
@@ -105,11 +105,11 @@ public class Cadastro {
 		this.numero = numero;
 	}
 
-	public Long getComplemento() {
+	public String getComplemento() {
 		return complemento;
 	}
 
-	public void setComplemento(Long complemento) {
+	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
 
